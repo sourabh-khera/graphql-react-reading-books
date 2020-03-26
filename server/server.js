@@ -6,12 +6,12 @@ const graphqlResolvers = require('./graphql/resolvers');
 require('./configuration/data_source');
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 
 app.use(cors());
 
 
-app.use(graphqlHttp({
+app.use('/graphql',graphqlHttp({
  schema: graphqlSchema,
  rootValue: graphqlResolvers, 
  graphiql: true
